@@ -72,12 +72,11 @@ cons = BudgetConstraints(60000, {c:0 for c in cfg.channels}, {c:40000 for c in c
 alloc = opt.optimize(cons)
 print(alloc.head())
 ```
-
 ## Notes & Caveats
-- This is an MVP for educational/open-source reference. For production-grade MMM, consider richer priors (e.g., hierarchical, horseshoe) and more elaborate seasonality/holidays.
-- The budget optimizer uses a steady-state approximation for adstock (\(1/(1-\alpha)\)).
-- Credible intervals are based on parameter draws (posterior of the mean). To include observation noise, add draws from \(\mathcal{N}(\mu_t, \sigma^2)\).
-- Ensure media spends are in comparable units (e.g., \$) before fitting.
+* This is an MVP for educational/open-source reference. For production-grade MMM, consider richer priors (e.g., hierarchical, horseshoe) and more elaborate seasonality/holidays.
+* The budget optimizer uses a steady-state approximation for adstock ($1/(1-\alpha)$).
+* Credible intervals are based on parameter draws (posterior of the mean). To include observation noise, add draws from $\mathcal{N}(\mu_t, \sigma^2)$.
+* Ensure media spends are in comparable units (e.g., \$) before fitting.
 
 ## Project layout
 ```
