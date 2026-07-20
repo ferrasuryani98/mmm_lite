@@ -14,7 +14,11 @@ plus optional trend and Fourier seasonality. Includes a simple **budget optimize
 
 ## Model
 We model sales as:
-$$ y_t \sim \mathcal{N}(\mu_t, \sigma^2),\quad \mu_t = \sum_i \beta_i \cdot \text{sat}(\text{adstock}(x_{i,t})) + \text{trend}_t + \text{season}_t $$
+
+$$ 
+y_t \sim \mathcal{N}(\mu_t, \sigma^2),\quad \mu_t = \sum_i \beta_i \cdot \text{sat}(\text{adstock}(x_{i,t})) + \text{trend}_t + \text{season}_t 
+$$
+
 Priors (conjugate):
 * $\beta \sim \mathcal{N}(0, \tau^2 I)$
 * $\sigma^2 \sim \text{InvGamma}(a_0, b_0)$
